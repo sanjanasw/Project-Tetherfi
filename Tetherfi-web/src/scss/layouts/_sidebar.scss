@@ -1,0 +1,231 @@
+﻿.sidebar {
+    position: relative;
+    z-index: 99;
+
+    &-container {
+        min-height: 100vh;
+        background-color: $Tetherfi-app-prime-background;
+        padding: 0;
+        overflow: auto;
+        max-height: 100vh;
+        overflow: scroll;
+        border-right: 1px solid $Tetherfi-app-border-light;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+
+    .logo-container {
+        height: 70px;
+    }
+
+    .logo-collapsed {
+        margin-top: 41%;
+        width: 80%;
+    }
+
+    .logo-expanded {
+        margin-top: 7%;
+    }
+
+    &-space {
+        margin-left: 0;
+        width: auto;
+        @include media-breakpoint-up(lg) {
+            margin-left: 60px;
+        }
+
+        &.expanded {
+            margin-left: 60px;
+            transition: 0.3s;
+
+            @include media-breakpoint-up(lg) {
+                margin-left: 242px;
+            }
+        }
+
+        &.collapsed {
+            transition: 0.3s;
+        }
+    }
+
+    .sidebar-hr {
+        background-color: $Tetherfi-app-prime-blue;
+    }
+
+    .list-group {
+        &-item {
+            border: none;
+            font-size: 16px;
+            font-weight: $Tetherfi-app-font-weight-medium;
+            border-radius: 4px;
+            color: $Tetherfi-app-secondary-sidebar-font;
+            background-color: $Tetherfi-app-prime-background;
+            margin: inherit;
+
+            &.toggle {
+                &.active {
+                    border-left: none;
+                }
+
+                &:hover {
+                    border-left: none;
+                }
+            }
+
+            .mdi {
+                font-size: 16px;
+                color: $Tetherfi-app-secondary-sidebar-font;
+            }
+
+            &.active {
+                border-left: 4px solid $Tetherfi-app-prime-blue;
+            }
+
+            &:hover {
+                border-left: 4px solid $Tetherfi-app-prime-blue;
+            }
+
+            &.mobile {
+                .menu-collapsed {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+        .sidebar-submenu {
+            a {
+                padding-left: 34px;
+                font-size: 13px;
+                font-weight: 300;
+
+                .mdi {
+                    font-size: 13px;
+                    line-height: 13px;
+                }
+
+                .submenu-item {
+                    margin-right: 1.3rem;
+                }
+            }
+        }
+    }
+
+    /* Sidebar sizes when expanded and expanded */
+    &-expanded {
+        width: 242px;
+        position: fixed;
+        z-index: 1;
+        transition: 0.3s;
+
+        /* Menu item*/
+        .list-group {
+            &-item {
+                & .menu-collapsed {
+                    display: block;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    &-collapsed {
+        width: 60px;
+        position: fixed;
+        z-index: 1;
+        transition: 0.3s;
+
+        /* Menu item*/
+        .list-group {
+            &-item {
+                height: 44px;
+                & .menu-collapsed {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.mobile {
+        padding-top: 14px;
+        &.fade-in {
+            visibility: visible;
+            -webkit-animation: fade-in-fwd 1.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+            animation: fade-in-fwd 1.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+            @-webkit-keyframes fade-in-fwd {
+                0% {
+                    -webkit-transform: translateZ(-80px);
+                    transform: translateZ(-80px);
+                    opacity: 0;
+                }
+                100% {
+                    -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes fade-in-fwd {
+                0% {
+                    -webkit-transform: translateZ(-80px);
+                    transform: translateZ(-80px);
+                    opacity: 0;
+                }
+                100% {
+                    -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+                    opacity: 1;
+                }
+            }
+        }
+        &.fade-out {
+            opacity: 0;
+        }
+    }
+}
+
+.fixed-space-collapsed {
+    float: left;
+    width: 0;
+    z-index: 1;
+    min-height: 100vh;
+    display: block;
+
+    @include media-breakpoint-up(md) {
+        width: 60px;
+    }
+}
+
+.fixed-space-expanded {
+    float: left;
+    width: 0;
+    z-index: 1;
+    min-height: 100vh;
+    display: block;
+
+    @include media-breakpoint-up(md) {
+        width: 250px;
+    }
+}
+
+.mobile-sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: $Tetherfi-app-prime-background;
+    overflow-x: hidden;
+    transition: 0.3s;
+    &.mobile-expanded {
+        @include media-breakpoint-down(md) {
+            width: 65%;
+        }
+        @include media-breakpoint-down(SM) {
+            width: 35%;
+        }
+    }
+    a {
+        transition: 0.3s;
+    }
+}

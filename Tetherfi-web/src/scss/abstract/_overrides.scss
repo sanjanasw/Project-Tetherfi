@@ -1,0 +1,46 @@
+﻿@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+// color overrides
+$theme-colors: (
+    'primary': $Tetherfi-app-prime-blue,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark,
+);
+
+$custom-colors: (
+    'sumi-ink': $Tetherfi-app-sumi-ink,
+    'sumi-ink-dark': $Tetherfi-app-secondary-info-font,
+    'dr-white': $Tetherfi-app-dr-white,
+    'alice-blue': $Tetherfi-app-badge-bg-primary,
+    'lavender': $Tetherfi-app-card-background,
+    'chambray': $Tetherfi-app-border-dark,
+    'shuttle-gray': $Tetherfi-app-secondary-font,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// background overrides
+$body-bg: $Tetherfi-app-prime-background;
+
+// font overrides
+$font-family-sans-serif: 'Work Sans', Roboto, 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Mulish';
+
+// table overrides
+$table-striped-order: even;
+$table-accent-bg: rgba($Tetherfi-app-prime-blue, 0.03);
+
+// badge overrides
+$badge-font-weight: $Tetherfi-app-badge-font-weight;
+$badge-border-radius: $Tetherfi-app-badge-border-radius;
+
+//form overrides
+$form-check-input-width: 1.25em;
+$form-check-min-height: $font-size-base * $line-height-base;
+$form-check-input-min-width: 1.25em;

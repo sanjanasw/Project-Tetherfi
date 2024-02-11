@@ -1,0 +1,21 @@
+.c {
+    &-primary {
+        color: $Tetherfi-app-prime-font;
+    }
+
+    &-secondary {
+        color: $Tetherfi-app-secondary-font;
+    }
+
+    &-success {
+        color: $Tetherfi-app-icon-success-green;
+    }
+}
+
+.link-primary-light {
+    color: $Tetherfi-app-secondary-font;
+}
+
+.link-primary-light:hover {
+    color: $Tetherfi-app-prime-font;
+}

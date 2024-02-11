@@ -1,0 +1,46 @@
+@include media-breakpoint-down(md) {
+    .btn-block-sm {
+        display: block;
+        width: 100%;
+    }
+}
+
+.btn {
+    &.btn-secondary {
+        background: #ffffff;
+        border: 1px solid #c4cbd1;
+        color: #3f4d5a;
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+
+    &.btn-transparent {
+        background: transparent;
+        border: none;
+        color: $Tetherfi-app-prime-font;
+        &:hover {
+            background: #eff7ff;
+        }
+    }
+
+    &.btn-append {
+        background: transparent;
+        border: 1px solid #ced4da !important;
+        border-left: none !important;
+        color: $Tetherfi-app-prime-font;
+        &:hover {
+            background: #eff7ff;
+        }
+    }
+}
+
+.btn {
+    &.btn-float-add {
+        position: fixed;
+        bottom: 20px;
+        right: 1px;
+        z-index: 99;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,31 @@
+.swal2-popup.swal2-toast .swal2-title {
+    &.alert-title {
+        font-size: 1rem;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 0.6rem;
+        }
+    }
+}
+
+.swal2-popup {
+    &.alert-popup {
+        font-size: 1rem;
+        &-success {
+            border: 2px solid #36b673;
+        }
+        &-error {
+            border: 2px solid #ffccc7;
+        }
+        &-warning {
+            border: 2px solid #ffe58f;
+        }
+        &-info {
+            border: 2px solid #91d5ff;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 0.5rem;
+        }
+    }
+}

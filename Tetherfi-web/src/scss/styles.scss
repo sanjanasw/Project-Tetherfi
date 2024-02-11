@@ -1,0 +1,25 @@
+// font
+@import url('https://fonts.googleapis.com/css?family=Mulish&display=swap');
+
+// overrides
+@import 'abstract/abstract-index';
+
+// bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// material icons
+@import '~@mdi/font/css/materialdesignicons.min.css';
+
+// customizations
+@import 'components/component-index';
+@import 'layouts/layouts-index';
+@import 'common/common-index';
+
+// ng-select
+@import '~@ng-select/ng-select/themes/default.theme.css';
+
+/* Font Family */
+html,
+body {
+    font-family: 'Mulish', sans-serif;
+}

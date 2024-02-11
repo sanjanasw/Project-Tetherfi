@@ -1,0 +1,44 @@
+.nav {
+    &-fixed-top {
+        margin-top: 63px;
+    }
+
+    &-mobile {
+        height: 85vh;
+        .link-card {
+            .mdi {
+                font-size: 3.5rem;
+                line-height: 1;
+            }
+        }
+    }
+    &-web {
+        margin-top: 0rem;
+        height: auto;
+        width: 100%;
+        border: 1px solid $Tetherfi-app-border-light;
+        border-width: 0 0 1px 0;
+        position: sticky;
+        top: 0;
+        z-index: 97;
+
+        &.action-header {
+            z-index: 96;
+        }
+    }
+    &-head {
+        border-width: 0 0 0 0;
+    }
+    &-expanded {
+        width: 84%;
+    }
+
+    &-collapsed {
+        width: 95%;
+    }
+}
+
+.navbar {
+    height: 50 px;
+    margin-top: -29 px;
+}

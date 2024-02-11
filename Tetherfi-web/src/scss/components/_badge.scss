@@ -1,0 +1,73 @@
+.badge {
+    &:not(.badge-initial) {
+        &.badge {
+            &-primary {
+                color: $Tetherfi-app-badge-text-primary;
+                background-color: $Tetherfi-app-badge-bg-primary;
+                border-radius: 0.25rem;
+            }
+
+            &-secondary-validation {
+                color: $Tetherfi-app-badge-text-primary;
+                background-color: $Tetherfi-app-badge-bg-primary;
+                border-radius: 0.25rem;
+                margin-top: 0.5rem;
+                margin-right: 0.5rem;
+            }
+
+            &-warning {
+                color: $Tetherfi-app-badge-text-warning;
+                background-color: $Tetherfi-app-badge-bg-warning;
+                border-radius: 0.25rem;
+            }
+
+            &-warning-validation {
+                color: $Tetherfi-app-badge-text-warning;
+                background-color: $Tetherfi-app-badge-bg-warning;
+                border-radius: 0.25rem;
+                margin-top: 0.5rem;
+                margin-right: 0.5rem;
+            }
+
+            &-success {
+                color: $Tetherfi-app-badge-text-success;
+                background-color: $Tetherfi-app-badge-bg-success;
+                border: $Tetherfi-app-badge-border;
+            }
+
+            &-success-validation {
+                color: $Tetherfi-app-badge-text-success;
+                background-color: $Tetherfi-app-badge-bg-success;
+                border-radius: 0.25rem;
+                margin-top: 0.5rem;
+                margin-right: 0.5rem;
+            }
+
+            &-danger {
+                color: $Tetherfi-app-badge-text-danger;
+                background-color: $Tetherfi-app-badge-bg-danger;
+                border: $Tetherfi-app-badge-border;
+            }
+
+            &-danger-validation {
+                color: $Tetherfi-app-badge-text-danger !important;
+                background-color: $Tetherfi-app-badge-bg-danger !important;
+                border-radius: 0.25rem;
+                margin-top: 0.5rem;
+                margin-right: 0.5rem;
+            }
+
+            &-active {
+                color: $Tetherfi-app-prime-font;
+                background-color: $Tetherfi-app-icon-active;
+                border-radius: 30px;
+            }
+
+            &-inactive {
+                color: $Tetherfi-app-prime-font;
+                background-color: $Tetherfi-app-icon-inactive;
+                border-radius: 30px;
+            }
+        }
+    }
+}

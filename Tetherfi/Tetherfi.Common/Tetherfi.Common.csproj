@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Enums\" />
+    <None Remove="Models\" />
+    <None Remove="Middlewares\" />
+    <None Remove="Middlewares\Model\" />
+    <None Remove="SwaggerDocFilters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Folder Include="Models\" />
+    <Folder Include="Middlewares\" />
+    <Folder Include="Middlewares\Model\" />
+    <Folder Include="SwaggerDocFilters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tetherfi.Data\Tetherfi.Data.csproj" />
+    <ProjectReference Include="..\Tetherfi.Helpers\Tetherfi.Helpers.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+</Project>

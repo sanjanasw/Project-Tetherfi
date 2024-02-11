@@ -1,0 +1,88 @@
+<div
+    class="mobile-sidebar d-lg-none d-block"
+    [class.mobile-expanded]="!isMobileSidebarExpanded"
+    [class.mobile-collapsed]="isMobileSidebarExpanded"
+>
+    <div class="logo-container ml-2 text-center">
+        <div class="row align-items-center p-3">
+            <div class="col-4">
+                <img src="/assets/images/common/logo.png" alt="" class="logo-expanded img-fluid w-75" />
+            </div>
+            <div class="col"><p class="fs-22 font-weight-medium-bold m-0 d-flex">Tetherfi</p></div>
+        </div>
+    </div>
+
+    <!-- List Group -->
+    <ul
+        class="sidebar mobile list-group"
+        [class.fade-in]="!isMobileSidebarExpanded"
+        [class.fade-out]="isMobileSidebarExpanded"
+    >
+        <a
+            routerLink="/home"
+            class="list-group-item mobile mt-2"
+            [routerLinkActive]="['active']"
+            (click)="onCloseMobileSidebar()"
+        >
+            <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="mdi mdi-view-dashboard"></span>
+                <span class="menu-collapsed">Home</span>
+            </div>
+        </a>
+        <a
+            routerLink="/job-seekers"
+            class="list-group-item mobile mt-2"
+            [routerLinkActive]="['active']"
+            (click)="onCloseMobileSidebar()"
+        >
+            <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="mdi mdi-account"></span>
+                <span class="menu-collapsed">Job Seeker</span>
+            </div>
+        </a>
+        <a
+            routerLink="/officers-list"
+            class="list-group-item mobile mt-2"
+            [routerLinkActive]="['active']"
+            (click)="onCloseMobileSidebar()"
+        >
+            <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="mdi mdi-human-male-board"></span>
+                <span class="menu-collapsed">Officers</span>
+            </div>
+        </a>
+        <a
+            routerLink="/admins-list"
+            class="list-group-item mobile mt-2"
+            [routerLinkActive]="['active']"
+            (click)="onCloseMobileSidebar()"
+        >
+            <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="mdi mdi-account-star"></span>
+                <span class="menu-collapsed">Admin</span>
+            </div>
+        </a>
+        <a
+            routerLink="/complaints"
+            class="list-group-item mobile mt-2"
+            [routerLinkActive]="['active']"
+            (click)="onCloseMobileSidebar()"
+        >
+            <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="mdi mdi-alert"></span>
+                <span class="menu-collapsed">Complaints</span>
+            </div>
+        </a>
+        <a
+            routerLink="/logs"
+            class="list-group-item mobile mt-2"
+            [routerLinkActive]="['active']"
+            (click)="onCloseMobileSidebar()"
+        >
+            <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="mdi mdi-format-list-bulleted-square"></span>
+                <span class="menu-collapsed">Logs</span>
+            </div>
+        </a>
+    </ul>
+</div>

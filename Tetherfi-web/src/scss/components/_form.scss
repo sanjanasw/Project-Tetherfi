@@ -1,0 +1,25 @@
+.form-control {
+    .has-calendar & {
+        padding-left: 2.375rem;
+    }
+}
+
+.form-control-feedback {
+    .has-calendar &,
+    .has-floating-label-dropdown & {
+        position: absolute;
+        z-index: 2000;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: rgba($Tetherfi-app-secondary-font, 0.6);
+    }
+
+    .has-floating-label-dropdown & {
+        width: 5.275rem;
+        line-height: 2.2rem;
+    }
+}

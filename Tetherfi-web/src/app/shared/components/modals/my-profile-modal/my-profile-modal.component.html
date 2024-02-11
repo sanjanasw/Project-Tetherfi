@@ -1,0 +1,68 @@
+<div class="modal-body">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-8 font-weight-medium-bold fs-16">My Profile</div>
+            <div class="col d-flex justify-content-end">
+                <button class="btn btn-secondary" (click)="onHideClick()">
+                    <span class="mdi mdi-close-thick"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 px-md-3">
+        <div class="col-12 d-flex justify-content-center">
+            <form (ngSubmit)="myProfile()" [formGroup]="myProfileForm" class="w-100">
+                <div class="row">
+                    <div class="col-12">
+                        <p>Profile Picture</p>
+                        <ngx-dropzone (change)="onSelect($event)" [multiple]="false" class="overflow-hidden"
+                            [accept]="'image/jpeg, image/png'">
+                            <ngx-dropzone-label>
+                                <img [src]="'/assets/images/common/File-upload.png'" alt="" class="image" />
+                                <h6 class="fs-12 p-1">
+                                    Click or drag & drop <br />
+                                    <span class="font-weight-medium-bold fs-14">Profile Picture</span>
+                                </h6>
+                            </ngx-dropzone-label>
+                            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" class="mx-auto"
+                                *ngFor="let f of image" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                            </ngx-dropzone-image-preview>
+                        </ngx-dropzone>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <app-text-input [formControl]="f['firstName']" [label]="'First Name'"
+                            [placeholder]="'First Name'" [customClasses]="textInputCustomClasses"></app-text-input>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <app-text-input [formControl]="f['lastName']" [label]="'Last Name'" [placeholder]="'Last Name'"
+                            [customClasses]="textInputCustomClasses"></app-text-input>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <app-text-input [formControl]="f['username']" [label]="'Username'" [placeholder]="'Username'"
+                            [customClasses]="textInputCustomClasses"></app-text-input>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <app-text-input [formControl]="f['dob']" [label]="'Birthday'" [placeholder]="'Birthday'"
+                            [customClasses]="textInputCustomClasses" [type]="'date'"></app-text-input>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-12 form-group mt-4">
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-secondary fs-16" (click)="onHideClick()">Cancel</button>
+                <button [disabled]="!myProfileForm.valid || isFormProcessing" class="btn btn-primary fs-16 mx-2"
+                    type="submit" (click)="myProfile()">
+                    <span *ngIf="isFormProcessing" class="spinner-border spinner-border-sm" role="status"
+                        aria-hidden="true"></span>
+                    <span *ngIf="!isFormProcessing" class="text-white">Update</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

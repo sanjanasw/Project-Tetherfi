@@ -1,0 +1,18 @@
+.wrapper {
+    position: absolute;
+    z-index: 9999;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    margin: 10%;
+}
+
+.wrapper-parent {
+    position: absolute;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.fileUploadArea {
+    height: 50vh !important;
+}

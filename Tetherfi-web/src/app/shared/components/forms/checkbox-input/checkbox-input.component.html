@@ -1,0 +1,38 @@
+<div [class]="customClasses.formGroup" *ngIf="!editable">
+    <div class="checkbox">
+        <label [class]="customClasses.label">
+            <input
+                class="align-middle"
+                [class]="customClasses.input"
+                [class.is-invalid]="ngControl.touched && ngControl.invalid"
+                type="{{ type }}"
+                [formControl]="ngControl.control"
+                [checked]="checked"
+                (change)="handleCheckboxChange($event)"
+                (click)="handleCheckboxChange($event)"
+            />
+            {{ label }}
+        </label>
+    </div>
+    <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">Please check the {{ label }}</div>
+</div>
+<div [class]="customClasses.formGroup" *ngIf="editable">
+    <div class="checkbox">
+        <label [class]="customClasses.label">
+            <input
+                class="align-middle"
+                [class]="customClasses.input"
+                [class.is-invalid]="ngControl.touched && ngControl.invalid"
+                type="{{ type }}"
+                [formControl]="ngControl.control"
+                [checked]="checked"
+                (change)="handleCheckboxChange($event)"
+                (click)="handleCheckboxChange($event)"
+            />
+            {{ label }}
+            <button class="btn btn-transparent btn-small" (click)="handleCheckboxActionButton()">Edit</button>
+        </label>
+    </div>
+    <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">Please check the {{ label }}</div>
+</div>
+

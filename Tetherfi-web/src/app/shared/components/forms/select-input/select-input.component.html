@@ -1,0 +1,56 @@
+<!-- input: base -->
+<div [class]="customClasses.formGroup">
+    <label [class]="customClasses.label">
+        {{ label }} <span *ngIf="showRequiredIndicator" class="text-danger"> * </span>
+    </label>
+    <ng-template [ngTemplateOutlet]="selectInput"></ng-template>
+    <ng-template [ngTemplateOutlet]="selectInputErrors"></ng-template>
+</div>
+
+<!-- templates -->
+<!-- tmpl: select-input -->
+<ng-template #selectInput>
+    <ng-select
+        #select
+        [items]="list"
+        [searchable]="searchable"
+        [dropdownPosition]="'auto'"
+        [bindValue]="bindField"
+        [bindLabel]="labelField"
+        [placeholder]="placeholder"
+        [formControl]="ngControl.control"
+        [clearable]="clearable"
+        [closeOnSelect]="closeOnSelect"
+        [appendTo]="appendTo"
+        (change)="onChange($event)"
+        (clear)="onClear()"
+        [class]="customClasses.input"
+        [multiple]="multiple"
+        [addTag]="addTag"
+        [addTagText]="addTagText"
+    >
+        <!-- option list template -->
+        <ng-template *ngIf="optionTemplate" ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+            <ng-container
+                [ngTemplateOutlet]="optionTemplate"
+                [ngTemplateOutletContext]="{
+                    item: item,
+                    index: index,
+                    search: search
+                }"
+            ></ng-container>
+        </ng-template>
+
+        <!-- label template -->
+        <ng-template *ngIf="labelTemplate" ng-label-tmp let-item="item">
+            <ng-container [ngTemplateOutlet]="labelTemplate" [ngTemplateOutletContext]="{ item: item }"></ng-container>
+        </ng-template>
+    </ng-select>
+</ng-template>
+
+<!-- tmpl: select-input-errors -->
+<ng-template #selectInputErrors>
+    <div *ngIf="ngControl.control.errors?.required && ngControl.control.touched" class="text-danger small">
+        Please select a {{ label | lowercase }}
+    </div>
+</ng-template>

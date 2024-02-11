@@ -1,0 +1,9 @@
+.dropdown-menu {
+    &.mobile {
+        min-width: auto;
+    }
+    &.profile {
+        right: -40px !important;
+        border: 0.1px solid $Tetherfi-app-border-light !important;
+    }
+}

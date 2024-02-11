@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetherfi", "Tetherfi\Tetherfi.csproj", "{548018F6-1AE8-497D-B23E-76A5874295E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetherfi.Data", "Tetherfi.Data\Tetherfi.Data.csproj", "{789FAB8E-F8E7-4697-BEB7-ACF90FBBEABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetherfi.Helpers", "Tetherfi.Helpers\Tetherfi.Helpers.csproj", "{BA893A65-7F9B-4B94-933A-217FED11DC19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetherfi.Common", "Tetherfi.Common\Tetherfi.Common.csproj", "{514ABC4D-1F51-4C51-8498-EFF703E0A8E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetherfi.Services", "Tetherfi.Services\Tetherfi.Services.csproj", "{86D96638-5B6F-49D0-B6D3-1652A07FB88B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetherfi.Test", "Tetherfi.Test\Tetherfi.Test.csproj", "{31C06D56-3BEC-4525-B15D-982D7B669A82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{548018F6-1AE8-497D-B23E-76A5874295E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{548018F6-1AE8-497D-B23E-76A5874295E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{548018F6-1AE8-497D-B23E-76A5874295E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{548018F6-1AE8-497D-B23E-76A5874295E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789FAB8E-F8E7-4697-BEB7-ACF90FBBEABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789FAB8E-F8E7-4697-BEB7-ACF90FBBEABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789FAB8E-F8E7-4697-BEB7-ACF90FBBEABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789FAB8E-F8E7-4697-BEB7-ACF90FBBEABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA893A65-7F9B-4B94-933A-217FED11DC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA893A65-7F9B-4B94-933A-217FED11DC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA893A65-7F9B-4B94-933A-217FED11DC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA893A65-7F9B-4B94-933A-217FED11DC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514ABC4D-1F51-4C51-8498-EFF703E0A8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514ABC4D-1F51-4C51-8498-EFF703E0A8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514ABC4D-1F51-4C51-8498-EFF703E0A8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514ABC4D-1F51-4C51-8498-EFF703E0A8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D96638-5B6F-49D0-B6D3-1652A07FB88B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D96638-5B6F-49D0-B6D3-1652A07FB88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D96638-5B6F-49D0-B6D3-1652A07FB88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D96638-5B6F-49D0-B6D3-1652A07FB88B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C06D56-3BEC-4525-B15D-982D7B669A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C06D56-3BEC-4525-B15D-982D7B669A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C06D56-3BEC-4525-B15D-982D7B669A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C06D56-3BEC-4525-B15D-982D7B669A82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF0945AA-11A8-4BDB-913C-3A44752DD03A}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

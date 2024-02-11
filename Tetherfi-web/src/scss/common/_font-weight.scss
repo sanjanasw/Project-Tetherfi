@@ -1,0 +1,14 @@
+.font-weight {
+    &-light {
+        font-weight: $Tetherfi-app-font-weight-light;
+    }
+    &-medium {
+        font-weight: $Tetherfi-app-font-weight-medium;
+    }
+    &-semi-bold {
+        font-weight: $Tetherfi-app-font-weight-semi-bold;
+    }
+    &-medium-bold {
+        font-weight: $Tetherfi-app-font-weight-medium-bold;
+    }
+}

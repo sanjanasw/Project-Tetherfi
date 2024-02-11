@@ -1,0 +1,125 @@
+<div [class]="customClasses.formGroup">
+    <ng-container *ngIf="!inputGroupAppendEnabled">
+        <label [class]="customClasses.label"
+            >{{ label }} <span *ngIf="showRequiredIndicator" class="text-danger"> * </span></label
+        >
+
+        <input
+            *ngIf="!inputDecimalCheckEnabled"
+            [class.is-invalid]="ngControl.touched && ngControl.invalid"
+            type="{{ type }}"
+            [step]="step"
+            [class]="customClasses.input"
+            [formControl]="ngControl.control"
+            placeholder="{{ placeholder }}"
+            (keyup)="onKeyUpEvent($event)"
+            [id]="elementId"
+        />
+        <input
+            *ngIf="inputDecimalCheckEnabled"
+            [class.is-invalid]="ngControl.touched && ngControl.invalid"
+            type="text"
+            [class]="customClasses.input"
+            [formControl]="ngControl.control"
+            placeholder="{{ placeholder }}"
+            inputmode="numeric"
+            [pattern]="inputDecimalPattern"
+            (keyup)="onKeyUpEvent($event)"
+            digitOnly
+        />
+    </ng-container>
+    <ng-container *ngIf="inputGroupAppendEnabled">
+        <label [class]="customClasses.label">{{ label }}</label>
+        <div class="input-group p-0" [class.is-invalid]="ngControl.touched && ngControl.invalid">
+            <input
+                *ngIf="!inputDecimalCheckEnabled"
+                [class.is-invalid]="ngControl.touched && ngControl.invalid"
+                type="{{ type }}"
+                [class]="customClasses.input"
+                [formControl]="ngControl.control"
+                placeholder="{{ placeholder }}"
+                (keyup)="onKeyUpEvent($event)"
+            />
+            <input
+                *ngIf="inputDecimalCheckEnabled"
+                [class.is-invalid]="ngControl.touched && ngControl.invalid"
+                type="text"
+                [class]="customClasses.input"
+                [formControl]="ngControl.control"
+                placeholder="{{ placeholder }}"
+                inputmode="numeric"
+                [pattern]="inputDecimalPattern"
+                digitOnly
+                [decimal]="true"
+                (keyup)="onKeyUpEvent($event)"
+            />
+            <div class="input-group-append">
+                <div class="input-group-text" *ngIf="inputGroupAppendText">
+                    {{ inputGroupAppendText }}
+                </div>
+                <button
+                    class="btn input-h-3 fs-16"
+                    [class]="appendButtonClasses"
+                    type="button"
+                    *ngIf="inputGroupAppendButtonText"
+                    (click)="onAppendClick()"
+                    [disabled]="inputGroupAppendButtonProcessing || inputGroupAppendButtonDisabled"
+                >
+                    <span
+                        *ngIf="inputGroupAppendButtonProcessing"
+                        class="spinner-border spinner-border-sm"
+                        role="status"
+                        aria-hidden="true"
+                    ></span>
+                    {{ inputGroupAppendButtonText }}
+                </button>
+            </div>
+        </div>
+    </ng-container>
+
+    <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">Please enter {{ label | lowercase }}</div>
+    <div
+        *ngIf="ngControl.control.errors?.min || ngControl.control.errors?.minlength"
+        class="invalid-feedback"
+        [attr.data-qa]="testAutomationSelectorName + '_validation_msg_min'"
+    >
+        {{ label }} must be at least
+        {{
+            ngControl.control.errors?.min
+                ? ngControl.control.errors?.min['min']
+                : ngControl.control.errors?.minlength['requiredLength']
+        }}
+        {{ ngControl.control.errors?.min ? '' : 'characters' }}
+    </div>
+    <div
+        *ngIf="ngControl.control.errors?.max || ngControl.control.errors?.maxlength"
+        class="invalid-feedback"
+        [attr.data-qa]="testAutomationSelectorName + '_validation_msg_max'"
+    >
+        {{ label }} must be at most
+        {{
+            ngControl.control.errors.max
+                ? ngControl.control.errors?.max['max']
+                : ngControl.control.errors?.maxlength['requiredLength']
+        }}
+        {{ ngControl.control.errors.max ? '' : 'characters' }}
+    </div>
+
+    <div *ngIf="ngControl.control.errors?.hasRestrictedCharacters" class="invalid-feedback">
+        {{ label }} shouldn't contain restricted characters
+    </div>
+    <div *ngIf="ngControl.control.errors?.hasExistingReference" class="invalid-feedback">
+        {{ label }} reference already exists
+    </div>
+    <div *ngIf="ngControl.control.errors?.pattern" class="invalid-feedback">
+        {{ label }} does not follow the required pattern
+    </div>
+    <div *ngIf="ngControl.control.errors?.exceedsMaxQuantity" class="invalid-feedback">
+        {{ label }} exceeds the maximum quantity allowed
+    </div>
+    <div *ngIf="ngControl.control.errors?.hasInvalidBarcodeFormat" class="invalid-feedback">
+        {{ label }} does not follow supported formats
+    </div>
+    <div *ngIf="ngControl.control.errors?.invalid" class="invalid-feedback">{{ label }} is not valid</div>
+    <div *ngIf="ngControl.control.errors?.email" class="invalid-feedback">{{ label }} is not valid</div>
+</div>

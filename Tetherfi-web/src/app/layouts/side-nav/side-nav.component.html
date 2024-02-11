@@ -1,0 +1,132 @@
+<div class="sidebar">
+    <div
+        id="sidebar-container"
+        class="sidebar-container d-none d-lg-block"
+        [class.sidebar-expanded]="isSidebarExpanded"
+        [class.sidebar-collapsed]="!isSidebarExpanded"
+    >
+        <div class="logo-container mb-1">
+            <div *ngIf="isSidebarExpanded" class="row align-items-center ps-3 pt-2">
+                <div class="col-4">
+                    <img src="/assets/images/common/logo.png" alt="" class="logo-expanded img-fluid" />
+                </div>
+                <div class="col"><p class="fs-22 font-weight-medium-bold m-0 d-flex">Tetherfi</p></div>
+            </div>
+            <img
+                src="/assets/images/common/logo.png"
+                alt=""
+                *ngIf="!isSidebarExpanded"
+                class="logo-collapsed img-fluid mx-auto d-block"
+            />
+            <p *ngIf="!isSidebarExpanded" class="mx-auto d-block fs-10 text-center">Tetherfi</p>
+        </div>
+
+        <!-- List Group -->
+        <ul class="list-group mt-2">
+            <a
+                routerLink="/home"
+                class="list-group-item p-0 my-2 d-flex"
+                routerLinkActive="active"
+                [ngClass]="{ 'p-2': isSidebarExpanded }"
+            >
+                <div
+                    class="d-flex w-100 align-self-center"
+                    [ngClass]="{ 'ps-2': isSidebarExpanded, 'justify-content-center': !isSidebarExpanded }"
+                >
+                    <span class="mdi mdi-view-dashboard"></span>
+                    <span class="menu-collapsed">Home</span>
+                </div>
+            </a>
+            <a
+                routerLink="/job-seekers"
+                class="list-group-item p-0 my-2 d-flex"
+                routerLinkActive="active"
+                [ngClass]="{ 'p-2': isSidebarExpanded }"
+            >
+                <div
+                    class="d-flex w-100 align-self-center"
+                    [ngClass]="{ 'ps-2': isSidebarExpanded, 'justify-content-center': !isSidebarExpanded }"
+                >
+                    <span class="mdi mdi-account"></span>
+                    <span class="menu-collapsed">Job Seeker</span>
+                </div>
+            </a>
+            <a
+                routerLink="/officers-list"
+                class="list-group-item p-0 my-2 d-flex"
+                routerLinkActive="active"
+                [ngClass]="{ 'p-2': isSidebarExpanded }"
+            >
+                <div
+                    class="d-flex w-100 align-self-center"
+                    [ngClass]="{ 'ps-2': isSidebarExpanded, 'justify-content-center': !isSidebarExpanded }"
+                >
+                    <span class="mdi mdi-human-male-board"></span>
+                    <span class="menu-collapsed">Officers</span>
+                </div>
+            </a>
+            <a
+                routerLink="/admins-list"
+                class="list-group-item p-0 my-2 d-flex"
+                routerLinkActive="active"
+                [ngClass]="{ 'p-2': isSidebarExpanded }"
+            >
+                <div
+                    class="d-flex w-100 align-self-center"
+                    [ngClass]="{ 'ps-2': isSidebarExpanded, 'justify-content-center': !isSidebarExpanded }"
+                >
+                    <span class="mdi mdi-account-star"></span>
+                    <span class="menu-collapsed">Admin</span>
+                </div>
+            </a>
+            <a
+                routerLink="/complaints"
+                class="list-group-item p-0 my-2 d-flex"
+                routerLinkActive="active"
+                [ngClass]="{ 'p-2': isSidebarExpanded }"
+            >
+                <div
+                    class="d-flex w-100 align-self-center"
+                    [ngClass]="{ 'ps-2': isSidebarExpanded, 'justify-content-center': !isSidebarExpanded }"
+                >
+                    <span class="mdi mdi-alert"></span>
+                    <span class="menu-collapsed">Complaints</span>
+                </div>
+            </a>
+            <a
+                routerLink="/logs"
+                class="list-group-item p-0 my-2 d-flex"
+                routerLinkActive="active"
+                [ngClass]="{ 'p-2': isSidebarExpanded }"
+            >
+                <div
+                    class="d-flex w-100 align-self-center"
+                    [ngClass]="{ 'ps-2': isSidebarExpanded, 'justify-content-center': !isSidebarExpanded }"
+                >
+                    <span class="mdi mdi-format-list-bulleted-square"></span>
+                    <span class="menu-collapsed">Logs</span>
+                </div>
+            </a>
+        </ul>
+
+        <div class="position-absolute bottom-0 start-0 w-100">
+            <hr class="sidebar-hr m-0 mt-2" [ngClass]="{ 'mx-2': !isSidebarExpanded }" />
+
+            <div
+                class="list-group-item toggle p-0 my-2 d-flex cursor-pointer"
+                routerLinkActive="active"
+                [ngClass]="{ 'p-2': isSidebarExpanded, 'mx-2': !isSidebarExpanded }"
+                (click)="toggleSidebarExpand()"
+            >
+                <div
+                    class="d-flex w-100 align-self-center"
+                    [ngClass]="{ 'ps-2': isSidebarExpanded, 'justify-content-center': !isSidebarExpanded }"
+                >
+                    <span *ngIf="isSidebarExpanded" class="mdi mdi-format-indent-decrease"></span>
+                    <span *ngIf="!isSidebarExpanded" class="mdi mdi-format-indent-increase"></span>
+                    <span class="menu-collapsed">Collapse</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

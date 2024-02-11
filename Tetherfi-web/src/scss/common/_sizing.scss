@@ -1,0 +1,181 @@
+.w {
+    &-10 {
+        width: 10%;
+    }
+
+    &-15 {
+        width: 15%;
+    }
+
+    &-17 {
+        width: 17%;
+    }
+
+    &-20 {
+        width: 20%;
+    }
+
+    &-25 {
+        width: 25%;
+    }
+
+    &-30 {
+        width: 30%;
+    }
+
+    &-45 {
+        width: 45%;
+    }
+
+    &-55 {
+        width: 55%;
+    }
+
+    &-60 {
+        width: 60%;
+    }
+
+    &-65 {
+        width: 65%;
+    }
+
+    &-70 {
+        width: 70%;
+    }
+
+    &-75 {
+        width: 75%;
+    }
+
+    &-84 {
+        width: 84%;
+    }
+
+    &-16 {
+        width: 16rem;
+    }
+
+    &-27 {
+        width: 27.5rem;
+    }
+    &-24 {
+        width: 24.875rem;
+    }
+
+    &-50 {
+        width: 49.938rem;
+    }
+    &-reset-20 {
+        width: 23.375rem;
+    }
+
+    &-88 {
+        width: 5.5rem;
+    }
+    &-262 {
+        width: 16.375rem;
+    }
+
+    &-522 {
+        width: 32.625rem;
+    }
+
+    &-500 {
+        width: 25.625rem;
+    }
+    &-min {
+        &-200 {
+            min-width: 200px;
+            @include media-breakpoint-up(md) {
+                min-width: inherit;
+            }
+        }
+        &-112 {
+            min-width: fit-content;
+            @include media-breakpoint-up(lg) {
+                min-width: 112px;
+            }
+        }
+    }
+}
+
+.h {
+    &-30 {
+        height: 30%;
+    }
+}
+
+.line-height {
+    &-0 {
+        line-height: 0rem;
+    }
+}
+
+.height {
+    &-0 {
+        height: 1rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .w-sm-100 {
+        width: 100% !important;
+    }
+    .w-sm-75 {
+        width: 75% !important;
+    }
+    .w-sm-50 {
+        width: 50% !important;
+    }
+    .w-sm-25 {
+        width: 25% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .w-md-100 {
+        width: 100% !important;
+    }
+    .w-md-75 {
+        width: 75% !important;
+    }
+    .w-md-50 {
+        width: 50% !important;
+    }
+    .w-md-25 {
+        width: 25% !important;
+    }
+    .w-md-20 {
+        width: 20% !important;
+    }
+    .w-md-10 {
+        width: 10% !important;
+    }
+    .w-md-15 {
+        width: 10% !important;
+    }
+    .w-md-16 {
+        width: 16% !important;
+    }
+    .w-md-60 {
+        width: 60% !important;
+    }
+    .w-md-64 {
+        width: 64% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .w-lg-100 {
+        width: 100% !important;
+    }
+    .w-lg-75 {
+        width: 75% !important;
+    }
+    .w-lg-50 {
+        width: 50% !important;
+    }
+    .w-lg-25 {
+        width: 25% !important;
+    }
+}

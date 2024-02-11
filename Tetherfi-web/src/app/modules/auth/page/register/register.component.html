@@ -1,0 +1,81 @@
+<div class="row pt-5">
+    <div class="col-12">
+        <h4 class="font mb-0 c-primary font-weight-medium-bold text-center text-lg-start">Welcome to Tetherfi</h4>
+        <p class="c-secondary text-center text-lg-start">Register to your account below</p>
+    </div>
+</div>
+<div class="row py-4">
+    <div class="col d-flex justify-content-center">
+        <form (ngSubmit)="register()" [formGroup]="registerForm" class="w-75 w-lg-100">
+            <div class="row">
+                <div class="col-12">
+                    <p>Profile Picture</p>
+                    <ngx-dropzone (change)="onSelect($event)" [multiple]="false" class="overflow-hidden"
+                        [accept]="'image/jpeg, image/png'">
+                        <ngx-dropzone-label>
+                            <img [src]="'/assets/images/common/File-upload.png'" alt="" class="image" />
+                            <h6 class="fs-12 p-1">
+                                Click or drag & drop <br />
+                                <span class="font-weight-medium-bold fs-14">Profile Picture</span>
+                            </h6>
+                        </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" class="mx-auto"
+                            *ngFor="let f of image" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                        </ngx-dropzone-image-preview>
+                    </ngx-dropzone>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-text-input [formControl]="f['firstName']" [label]="'First Name'" [placeholder]="'First Name'"
+                        [customClasses]="textInputCustomClasses"></app-text-input>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-text-input [formControl]="f['lastName']" [label]="'Last Name'" [placeholder]="'Last Name'"
+                        [customClasses]="textInputCustomClasses"></app-text-input>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-text-input [formControl]="f['username']" [label]="'Username'" [placeholder]="'Username'"
+                        [customClasses]="textInputCustomClasses"></app-text-input>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-text-input [formControl]="f['email']" [label]="'Email'" [placeholder]="'Email'"
+                        [customClasses]="textInputCustomClasses"></app-text-input>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-text-input [formControl]="f['dob']" [label]="'Birthday'" [placeholder]="'Birthday'"
+                        [customClasses]="textInputCustomClasses" [type]="'date'"></app-text-input>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-select-input [label]="'Role'" [formControl]="f['role']"
+                        [customClasses]="selectInputCustomClasses" [placeholder]="'Select user role'" [list]="roles"
+                        [labelField]="'name'" [bindField]="'role'"></app-select-input>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-password-input [formControl]="f['password']" [label]="'Create password'"
+                        [placeholder]="'Password'" [customClasses]="textInputCustomClasses"></app-password-input>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <app-password-input [formControl]="f['passwordConfirmation']" [label]="'Retype password'"
+                        [placeholder]="'Password'" [isPasswordConfirm]="true"
+                        [customClasses]="textInputCustomClasses"></app-password-input>
+                </div>
+
+                <div class="form-group d-flex justify-content-center pt-4">
+                    <button type="submit" class="btn btn-primary w-100 input-h-3 fs-16" (click)="register()"
+                        [disabled]="!registerForm.valid || isFormProcessing">
+                        <span *ngIf="isFormProcessing" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true"></span>
+                        <p class="fs-14 my-auto" *ngIf="!isFormProcessing">REGISTER</p>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
