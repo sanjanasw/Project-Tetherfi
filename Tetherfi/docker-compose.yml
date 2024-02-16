@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tetherfi:
+    image: ${DOCKER_REGISTRY-}tetherfi
+    build:
+      context: .
+      dockerfile: Tetherfi/Dockerfile
